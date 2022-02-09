@@ -72,6 +72,7 @@ function validateAnimal(animal) {
     return true;
 }
 
+// GET ROUTES
 app.get('/api/animals', (req, res) => {
     let results = animals;
     if (req.query) {
@@ -105,6 +106,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+// POST ROUTES
 app.post('/api/animals', (req, res) => {
     // set id based on what the next index of the array will be
     req.body.id = animals.length.toString();
